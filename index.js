@@ -1,6 +1,6 @@
 //boilerpate server
 const express = require("express");
-const db = require("./config/connection");
+const db = require("./configuration/connection");
 const routes = require("./routes");
 const cwd = process.cwd();
 //express

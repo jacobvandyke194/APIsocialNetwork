@@ -3,8 +3,8 @@ const { Thought, APIUser} = require('../models');
 module.exports = {
     async createThought(req, res) {
         try {
+            const APIuser= await APIUser.findOneAndUpdate({ _id: req.body.userId }, { $addToSet: {thoughts: thought._id} }, {new:true});
             const thought = await Thought.create(req.body);
-            const APIUser= await User.findOneAndUpdate({ _id: req.body.userId }, { $addToSet: {thoughts: thought._id} }, {new:true});
             res.json(`Thought created!`);
         } catch (error) {
             res.status(500).json(error);
@@ -40,7 +40,7 @@ module.exports = {
             if (!thinking) {
                 res.status(404).json({message: `Please enter a new ID. (Thoughtless)`});
             } else {
-                const APIUser= await User.findOneAndUpdate({thoughts: req.params.thoughtId}, {$pull: {thoughts: req.params.thoughtId}}, {new:true});
+                const APIuser= await APIUser.findOneAndUpdate({thoughts: req.params.thoughtId}, {$pull: {thoughts: req.params.thoughtId}}, {new:true});
                 res.json({message: 'Successfully Delete Though :)'});
             }
         } catch (error) {

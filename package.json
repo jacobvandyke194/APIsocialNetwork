@@ -1,0 +1,29 @@
+{
+    "name": "APIsocialNetwork",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+      "start": "node index",
+      "dev": "nodemon index",
+      "seed": "node utils/seed",
+      "heroku-postbuild": "node utils/seed.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/jacobvandyke194/APIsocialNetwork.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/jacobvandyke194/APIsocialNetwork/issues"
+    },
+    "homepage": "https://github.com/jacobvandyke194/APIsocialNetwork#readme",
+    "dependencies": {
+      "dayjs": "^1.11.7",
+      "express": "^4.17.1",
+      "mongoose": "^6.0.13"
+    }
+  }
+  
