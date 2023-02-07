@@ -1,5 +1,3 @@
-// seeding data obtained and updated from mini project.
-
 const users = [
     { 
         username: "Jakey",
@@ -81,8 +79,4 @@ const thoughts = [
         username: randomized(),
     }
 ];
-
-// Get a random item given an array
-
-// Export the functions for use in seed.js
 module.exports = { users, thoughts };

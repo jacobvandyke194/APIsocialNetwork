@@ -38,6 +38,6 @@ thoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
 thoughtSchema.virtual('formattedDate').get(function() {
-    return date(this.createdAt).format('MM/DD/YYYY');
+    return date(this.createdAt).format('MM/DD/YY');
 });
 module.exports = Thought;

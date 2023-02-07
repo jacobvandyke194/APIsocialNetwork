@@ -37,7 +37,7 @@ module.exports = {
                 res.status(404).json({message: `Please try a different thought ID`});
             } else if(thought){
                 const user = await User.findOneAndUpdate({thoughts: req.params.thoughtId}, {$pull: {thoughts: req.params.thoughtId}}, {new:true});
-                res.json({message: 'Deleted thought!'});
+                res.json({message: 'Selected thought was deleted successfully!'});
             }
         } catch (error) {
             res.status(500).json(error);

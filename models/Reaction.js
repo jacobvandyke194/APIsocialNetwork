@@ -30,7 +30,7 @@ const reactionSchema = new Schema(
 );
 
 reactionSchema.virtual("formatedDate").get(function () {
-    return date(this.createdAt).format("MM/DD/YYYY");
+    return date(this.createdAt).format("MM/DD/YY");
 });
 
 module.exports = reactionSchema;
